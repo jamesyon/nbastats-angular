@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from '../../models/Player';
+import { PlayerService } from '../../services/player.service'
 
 @Component({
   selector: 'app-players',
@@ -9,30 +10,11 @@ import { Player } from '../../models/Player';
 export class PlayersComponent implements OnInit {
   players: Player[];
 
-  constructor() {}
+  constructor(private playerService:PlayerService) {}
 
   ngOnInit(): void {
-    this.players = [
-      {
-        id: 1,
-        first_name: 'Zach Lavine',
-      },
-      {
-        id: 2,
-        first_name: 'Coby White',
-      },
-      {
-        id: 3,
-        first_name: 'Lauri Markkanen',
-      },
-      {
-        id: 4,
-        first_name: 'Wendell Carter Jr.',
-      },
-      {
-        id: 5,
-        first_name: 'Otto Porter Jr.',
-      }
-    ];
+    this.playerService.getPlayers().subscribe(players => {
+      this.players = players
+    })
   }
 }

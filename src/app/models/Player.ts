@@ -1,6 +1,7 @@
 export class Player {
   id: number;
-  first_name: string;
+  title: string;
+  description: string;
   // last_name: string;
   // position: string;
   // team: object;

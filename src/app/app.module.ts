@@ -8,6 +8,7 @@ import { TeamsComponent } from './components/teams/teams.component';
 import { TeamStatsComponent } from './components/team-stats/team-stats.component';
 import { PlayersComponent } from './components/players/players.component';
 import { PlayerStatsComponent } from './components/player-stats/player-stats.component';
+import { HeaderLayoutComponent } from './components/header-layout/header-layout.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PlayerStatsComponent } from './components/player-stats/player-stats.com
     TeamStatsComponent,
     PlayersComponent,
     PlayerStatsComponent,
+    HeaderLayoutComponent,
     ],
   imports: [
     BrowserModule,
@@ -24,6 +26,7 @@ import { PlayerStatsComponent } from './components/player-stats/player-stats.com
     RouterModule.forRoot([
       { path: '', component: TeamsComponent },
       { path: 'players-list', component: PlayersComponent },
+      { path: 'players-stats', component: PlayerStatsComponent}
     ]),
   ],
   providers: [],
