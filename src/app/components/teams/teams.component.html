@@ -1,1 +1,8 @@
-<app-team-stats *ngFor="let team of teams" [team]="team"></app-team-stats>
+<div>
+  <div *ngFor="let team of teams" [team]="team">
+    <mat-card class="team-card" routerLink="/roster-stats">
+      <img class="team-logo" src="/assets/img/chicago-bulls.png" />
+      <span class="team-name">{{ team.name }}</span>
+    </mat-card>
+  </div>
+</div>

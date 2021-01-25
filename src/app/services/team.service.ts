@@ -7,15 +7,13 @@ import { Observable } from 'rxjs'
   providedIn: 'root'
 })
 export class TeamService {
-  teamsUrl: string = 'https://jsonplaceholder.typicode.com/todos';
-  teamLimit = '?_limit=5'
-
+  // team: ''
   constructor(private http: HttpClient) { }
 
   // Get Teams
-  getTeams(): Observable<Team[]> {
-    return this.http.get<Team[]>(`${this.teamsUrl}${this.teamLimit}`)
-  }
+  // getTeams(): Observable<Team[]> {
+  //   return this.http.get<Team[]>({this.team})
+  // }
 
 }
 

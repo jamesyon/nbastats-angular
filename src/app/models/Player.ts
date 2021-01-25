@@ -1,8 +1,11 @@
 export class Player {
-  id: number;
-  title: string;
-  description: string;
-  // last_name: string;
-  // position: string;
-  // team: object;
+  jersey: number;
+  name: string;
+  position: string;
+  points: number;
+  assists: number;
+  rebounds: number;
+  steals: number;
+  blocks: number;
+  turnovers: number;
 }

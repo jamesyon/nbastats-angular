@@ -8,13 +8,11 @@ import { Player } from '../models/Player'
   providedIn: 'root'
 })
 export class PlayerService {
-  playersUrl: string = 'https://jsonplaceholder.typicode.com/todos';
-  playerLimit = '?_limit=5'
-
+  // player: ''
   constructor(private http: HttpClient) { }
 
   // Get Players
-  getPlayers(): Observable<Player[]> {
-    return this.http.get<Player[]>(`${this.playersUrl}${this.playerLimit}`)
-  }
+  // getPlayers(): Observable<Player[]> {
+  //   return this.http.get<Player[]>({this.player})
+  // }
 }

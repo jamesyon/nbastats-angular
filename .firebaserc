@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "nba-angular-4ad78": {
+      "hosting": {
+        "nba-angular": [
+          "nba-angular-4ad78"
+        ]
+      }
+    }
+  }
+}

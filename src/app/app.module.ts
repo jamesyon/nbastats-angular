@@ -5,29 +5,35 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TeamsComponent } from './components/teams/teams.component';
-import { TeamStatsComponent } from './components/team-stats/team-stats.component';
 import { PlayersComponent } from './components/players/players.component';
-import { PlayerStatsComponent } from './components/player-stats/player-stats.component';
 import { HeaderLayoutComponent } from './components/header-layout/header-layout.component';
+import { AngularFirestoreModule } from '@angular/fire/firestore'
+import { AngularFireModule } from '@angular/fire'
+import { environment } from 'src/environments/environment'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatTableModule } from '@angular/material/table'
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [
     AppComponent,
     TeamsComponent,
-    TeamStatsComponent,
     PlayersComponent,
-    PlayerStatsComponent,
     HeaderLayoutComponent,
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatTableModule,
+    MatCardModule,
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: TeamsComponent },
-      { path: 'players-list', component: PlayersComponent },
-      { path: 'players-stats', component: PlayerStatsComponent}
+      { path: 'roster-stats', component: PlayersComponent },
     ]),
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Team } from '../../models/Team';
-import { TeamService } from '../../services/team.service'
+import { TeamService } from '../../services/team.service';
 
 @Component({
   selector: 'app-teams',
@@ -8,14 +9,12 @@ import { TeamService } from '../../services/team.service'
   styleUrls: ['./teams.component.css'],
 })
 export class TeamsComponent implements OnInit {
-  teams: Team[];
+  // teams = this.store.collection('Team').valueChanges({ idField: 'id'})
+  teams: Team[] = [{ id: 1, name: 'Chicago Bulls', conference: 'Eastern' }];
 
-  constructor(private teamService:TeamService) {}
+  constructor() {}
+  // constructor(private store: AngularFirestore) {}
 
   // similar to ComponentDidMount
-  ngOnInit(): void {
-    this.teamService.getTeams().subscribe(teams => {
-      this.teams = teams;
-    });
-  }
+  ngOnInit(): void {}
 }
