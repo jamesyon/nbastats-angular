@@ -1,0 +1,34 @@
+<mat-form-field>
+  <mat-label>Points</mat-label>
+  <textarea matInput [(ngModel)]="data.teamstats.points"></textarea>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Assists</mat-label>
+  <textarea matInput [(ngModel)]="data.teamstats.assists"></textarea>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Rebounds</mat-label>
+  <textarea matInput [(ngModel)]="data.teamstats.rebounds"></textarea>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Steals</mat-label>
+  <textarea matInput [(ngModel)]="data.teamstats.steals"></textarea>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Blocks</mat-label>
+  <textarea matInput [(ngModel)]="data.teamstats.blocks"></textarea>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Turnovers</mat-label>
+  <textarea matInput [(ngModel)]="data.teamstats.turnovers"></textarea>
+</mat-form-field>
+
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="{ teamstats: data.teamstats }">OK</button>
+  <button mat-button (click)="cancel()">Cancel</button>
+</div>

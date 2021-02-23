@@ -1,8 +1,46 @@
 <div>
-  <div *ngFor="let team of teams" [team]="team">
-    <mat-card class="team-card" routerLink="/roster-stats">
-      <img class="team-logo" src="/assets/img/chicago-bulls.png" />
-      <span class="team-name">{{ team.name }}</span>
-    </mat-card>
+  <div class="teams-page">
+    <div class="teams-page" *ngFor="let team of teams | async; keyvalue">
+      <mat-card class="team-card" routerLink="/roster-stats">
+        <img class="team-logo" src="/assets/img/chicago-bulls.png" />
+        <span class="team-name">{{ team.name }}</span>
+        <h2>{{ team.record }}</h2>
+      </mat-card>
+    </div>
+
+    <div class="teams-page">
+      <mat-card class="team-card">
+        <img class="team-logo" src="/assets/img/boston-celtics.png" />
+        <span class="team-name">Boston Celtics</span>
+        <h2>9 - 6</h2>
+      </mat-card>
+    </div>
+
+    <div class="teams-page">
+      <mat-card class="team-card">
+        <img class="team-logo" src="/assets/img/golden-state-warriors.png" />
+        <span class="team-name">GS Warriors</span>
+        <h2>8 - 8</h2>
+      </mat-card>
+    </div>
+
+    <div class="teams-page">
+      <mat-card class="team-card">
+        <img class="team-logo" src="/assets/img/los-angeles-lakers.png" />
+        <span class="team-name">LA Lakers</span>
+        <h2>14 - 4</h2>
+      </mat-card>
+    </div>
+
+    <div class="teams-page">
+      <mat-card class="team-card">
+        <img class="team-logo" src="/assets/img/brooklyn-nets.png" />
+        <span class="team-name">Brooklyn Nets</span>
+        <h2>11 - 8</h2>
+      </mat-card>
+    </div>
   </div>
 </div>
+<button class="button" (click)="newTeam()" mat-button>
+  <mat-icon>add</mat-icon> Add Team
+</button>

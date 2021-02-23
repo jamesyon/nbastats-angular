@@ -1,18 +1,75 @@
-.styled-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  font-family: sans-serif;
-  min-width: 400px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  width: 100%;
+.roster-stats-page {
+  background-color: #1A1A1D;
 }
 
-.roster-stats h1 {
+.roster-stats h1{
+  font-weight: bolder;
+  font-size: 30px;
   font-family: sans-serif;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 20px;
+  color: #C3073F
+}
+
+.player-info {
+  display: inline-flex;
+}
+
+.player-card {
+  border: 2px solid #C3073F;
+  text-align: left;
+  width: 350px;
+  height: 150px;
+  padding: 30px;
+  margin: 20px;
+  background-color: #4E4E50;
+}
+
+.player-img {
+  width: 150px;
+  float: left;
+  padding-right: 40px;
+}
+
+.player-text {
+  font-size: 15px;
+  font-family: sans-serif;
+  text-align: left;
+
+}
+
+.player-text-number {
+  font-size: 25px;
   font-weight: bold;
 }
 
-.roster-stats td {
-  font-weight: bold;
+.player-text-name {
+  font-size: 20px;
+}
+
+.teamstats-card {
+  display: inline-block;
+  justify-content: space-around;
+  border: 2px solid #C3073F;
+  text-align: center;
+  width: 150px;
+  padding: 20px;
+  margin: 20px;
+  font-size: 30px;
+  font-weight: bolder;
+  background-color: #4E4E50;
+}
+
+.teamstats-card .teamstats-text {
+  font-size: 25px;
+  font-weight: normal;
+  font-family: sans-serif;
+  padding-top: 20px;
+  text-decoration: none;
+}
+
+.button {
+  color: #6F2232;
+  font-size: 18px
 }

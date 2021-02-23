@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Team } from '../../models/Team';
-import { TeamService } from '../../services/team.service';
+import { MatDialog } from '@angular/material/dialog';
+import { TeamDialogResult, TeamDialogComponent } from '../team-dialog/team-dialog.component'
 
 @Component({
   selector: 'app-teams',
@@ -9,12 +9,22 @@ import { TeamService } from '../../services/team.service';
   styleUrls: ['./teams.component.css'],
 })
 export class TeamsComponent implements OnInit {
-  // teams = this.store.collection('Team').valueChanges({ idField: 'id'})
-  teams: Team[] = [{ id: 1, name: 'Chicago Bulls', conference: 'Eastern' }];
+  teams = this.store.collection('team').valueChanges({ idField: 'id'})
 
-  constructor() {}
-  // constructor(private store: AngularFirestore) {}
+  constructor(private dialog: MatDialog, private store: AngularFirestore) {}
 
   // similar to ComponentDidMount
   ngOnInit(): void {}
+
+  newTeam(): void {
+    const dialogRef = this.dialog.open(TeamDialogComponent, {
+      width: '270px',
+      data: {
+        team: {},
+      },
+    });
+    dialogRef
+      .afterClosed()
+      .subscribe((result: TeamDialogResult) => this.store.collection('team').add(result.team));
+  }
 }

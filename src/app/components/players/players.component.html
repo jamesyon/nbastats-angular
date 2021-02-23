@@ -1,69 +1,53 @@
-<div>
+<div class="roster-stats-page">
   <div class="roster-stats">
     <h1>Roster</h1>
-    <table mat-table [dataSource]="dataSource" class="styled-table">
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-
-      <!-- Position Column -->
-      <ng-container matColumnDef="No.">
-        <th mat-header-cell *matHeaderCellDef>No.</th>
-        <td mat-cell *matCellDef="let player">{{ player.jersey }}</td>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="Name">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
-        <td mat-cell *matCellDef="let player">{{ player.name }}</td>
-      </ng-container>
-
-      <!-- Position Column -->
-      <ng-container matColumnDef="Position">
-        <th mat-header-cell *matHeaderCellDef>Position</th>
-        <td mat-cell *matCellDef="let player">{{ player.position }}</td>
-      </ng-container>
-
-      <!-- Points Column -->
-      <ng-container matColumnDef="Points">
-        <th mat-header-cell *matHeaderCellDef>Average Points</th>
-        <td mat-cell *matCellDef="let player">{{ player.points }}</td>
-      </ng-container>
-
-      <!-- Assists Column -->
-      <ng-container matColumnDef="Assists">
-        <th mat-header-cell *matHeaderCellDef>Average Assists</th>
-        <td mat-cell *matCellDef="let player">{{ player.assists }}</td>
-      </ng-container>
-
-      <!-- Rebounds Column -->
-      <ng-container matColumnDef="Rebounds">
-        <th mat-header-cell *matHeaderCellDef>Average Rebounds</th>
-        <td mat-cell *matCellDef="let player">{{ player.rebounds }}</td>
-      </ng-container>
-
-      <!-- Steals Column -->
-      <ng-container matColumnDef="Steals">
-        <th mat-header-cell *matHeaderCellDef>Average Steals</th>
-        <td mat-cell *matCellDef="let player">{{ player.steals }}</td>
-      </ng-container>
-
-      <!-- Blocks Column -->
-      <ng-container matColumnDef="Blocks">
-        <th mat-header-cell *matHeaderCellDef>Average Blocks</th>
-        <td mat-cell *matCellDef="let player">{{ player.blocks }}</td>
-      </ng-container>
-
-      <!-- Turnovers Column -->
-      <ng-container matColumnDef="Turnovers">
-        <th mat-header-cell *matHeaderCellDef>Average Turnovers</th>
-        <td mat-cell *matCellDef="let player">{{ player.turnovers }}</td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="active-row"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns" class="active-row"></tr>
-    </table>
+    <div class="player-info" *ngFor="let player of players | async; keyvalue">
+      <mat-card class="player-card">
+        <img class="player-img" src="/assets/img/blankuser.png" />
+        <div class="player-text-number">No. {{ player.jersey }}</div>
+        <div class="player-text-name">{{ player.name }}</div>
+        <div class="player-text">Points: {{ player.points }}</div>
+        <div class="player-text">Rebounds: {{ player.rebounds }}</div>
+        <div class="player-text">Assists: {{ player.assists }}</div>
+        <div class="player-text">Steals: {{ player.steals }}</div>
+        <div class="player-text">Blocks: {{ player.blocks }}</div>
+        <div class="player-text">Turnovers: {{ player.turnovers }}</div>
+      </mat-card>
+    </div>
   </div>
+  <button class="button" (click)="newPlayer()" mat-button>
+    <mat-icon>add</mat-icon> Add Player
+  </button>
   <div class="roster-stats">
     <h1>Team Stats</h1>
+    <div *ngFor="let teamstat of teamStats | async; keyvalue">
+      <mat-card class="teamstats-card">
+        Points
+        <div class="teamstats-text">{{ teamstat.points }}</div>
+      </mat-card>
+      <mat-card class="teamstats-card">
+        Rebounds
+        <div class="teamstats-text">{{ teamstat.rebounds }}</div>
+      </mat-card>
+      <mat-card class="teamstats-card">
+        Assists
+        <div class="teamstats-text">{{ teamstat.assists }}</div>
+      </mat-card>
+      <mat-card class="teamstats-card">
+        Steals
+        <div class="teamstats-text">{{ teamstat.steals }}</div>
+      </mat-card>
+      <mat-card class="teamstats-card">
+        Blocks
+        <div class="teamstats-text">{{ teamstat.blocks }}</div>
+      </mat-card>
+      <mat-card class="teamstats-card">
+        Turnovers
+        <div class="teamstats-text">{{ teamstat.turnovers }}</div>
+      </mat-card>
+    </div>
   </div>
+  <button class="button" (click)="newTeamStats()" mat-button>
+    <mat-icon>add</mat-icon> Add Team Stats
+  </button>
 </div>

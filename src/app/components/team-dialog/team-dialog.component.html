@@ -1,0 +1,14 @@
+<mat-form-field>
+  <mat-label>Team</mat-label>
+  <input matInput cdkFocusInitial [(ngModel)]="data.team.name" />
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Conference</mat-label>
+  <textarea matInput [(ngModel)]="data.team.conference"></textarea>
+</mat-form-field>
+
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="{ team: data.team }">OK</button>
+  <button mat-button (click)="cancel()">Cancel</button>
+</div>

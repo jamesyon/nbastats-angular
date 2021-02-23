@@ -1,7 +1,7 @@
 .team-card {
   display: inline-block;
-  border: 2px solid black;
-  background-color: red;
+  border: 2px solid #C3073F;
+  background-color: #4E4E50;
   border-radius: 8px;
   width: 200px;
   height: 200px;
@@ -9,6 +9,12 @@
   cursor: pointer;
   text-align: center;
   vertical-align: top;
+}
+
+.teams-page {
+  display: inline-block;
+  justify-content: space-around;
+  padding: 25px;
 }
 
 .team-logo {
@@ -20,4 +26,10 @@
   display: block;
   font-size: 25px;
   font-weight: bold;
+}
+
+.button {
+  color: #6F2232;
+  font-size: 18px;
+  padding-left: 50px;
 }

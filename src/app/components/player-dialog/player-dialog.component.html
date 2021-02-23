@@ -1,0 +1,49 @@
+<mat-form-field>
+  <mat-label>No.</mat-label>
+  <input matInput cdkFocusInitial [(ngModel)]="data.player.jersey" />
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Name</mat-label>
+  <textarea matInput [(ngModel)]="data.player.name"></textarea>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Position</mat-label>
+  <textarea matInput [(ngModel)]="data.player.position"></textarea>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Points</mat-label>
+  <textarea matInput [(ngModel)]="data.player.points"></textarea>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Assists</mat-label>
+  <textarea matInput [(ngModel)]="data.player.assists"></textarea>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Rebounds</mat-label>
+  <textarea matInput [(ngModel)]="data.player.rebounds"></textarea>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Steals</mat-label>
+  <textarea matInput [(ngModel)]="data.player.steals"></textarea>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Blocks</mat-label>
+  <textarea matInput [(ngModel)]="data.player.blocks"></textarea>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Turnovers</mat-label>
+  <textarea matInput [(ngModel)]="data.player.turnovers"></textarea>
+</mat-form-field>
+
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="{ player: data.player }">OK</button>
+  <button mat-button (click)="cancel()">Cancel</button>
+</div>
